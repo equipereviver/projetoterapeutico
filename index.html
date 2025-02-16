@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Terapeutico Singular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #004080;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .checkbox-group {
+            margin-left: 20px;
+        }
+        #output {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Projeto Terapeutico Singular</h2>
+
+<div class="section">
+    <h3>1. Questões Prioritarias</h3>
+    <div class="checkbox-group">
+        <input type="checkbox" id="alcool1"> Dependencia e abuso do alcool<br>
+        <input type="checkbox" id="alcool2"> Abstinencia manifestada por sinais e sintomas relacionados a quadro de sindrome de abstinencia alcoolica<br>
+        <input type="checkbox" id="alcool3"> Consumo para aliviar ou evitar sintomas de abstinencia (uso para conseguir dormir, acordar, etc)<br>
+        <input type="checkbox" id="alcool4"> Cuidados relacionados a SAA que envolvem medicacao, controle de sinais e prevencao de riscos (SAA grave, delirium, etc)<br>
+        <input type="checkbox" id="alcool5"> Desejo de diminuir padrao de consumo de bebida alcoolica (dose, frequencia, etc)<br>
+        <input type="checkbox" id="alcool6"> Necessidade de abstinencia de bebida alcoolica por questoes clinicas (ex: cirrose hepatica, demencia alcoolica, hepatopatias, etc)<br>
+        <input type="checkbox" id="alcool7"> Uso abusivo de bebida alcoolica implicando em questoes interpessoais e/ou de trabalho<br>
+        <input type="checkbox" id="alcool8"> Uso de alcool associado a problemas de saude mental, como depressao ou transtornos de ansiedade<br>
+        <input type="checkbox" id="alcool9"> Dependencia e abuso de alcool como mecanismo de enfrentamento de estressores emocionais ou psicossociais<br>
+        <input type="checkbox" id="alcool10"> Monitoramento dos efeitos cronicos do uso excessivo de alcool na saude fisica, como doencas cardiacas e neurodegenerativas<br>
+    </div>
+</div>
+
+<div class="section">
+    <h3>2. Objetivos de Curto Prazo</h3>
+    <div class="checkbox-group">
+        <input type="checkbox" id="objetivo1"> Construir cuidado pautado nas praticas de reducao de danos, sem necessariamente exigir a abstinencia imediata<br>
+        <input type="checkbox" id="objetivo2"> Mantenção da proposta do cuidado em reducao de danos, respeitando o ritmo e as decisoes do usuario<br>
+        <input type="checkbox" id="objetivo3"> Construir espacos em que o usuario possa problematizar o consumo abusivo de SPAS e suas implicacoes, sem julgamento<br>
+        <input type="checkbox" id="objetivo4"> Cuidado em saude mental visando a abstinencia da substancia de abuso, com foco no fortalecimento psiquico do usuario<br>
+    </div>
+</div>
+
+<div class="section">
+    <h3>3. Ação e Estratégias</h3>
+    <textarea id="acoesEstratégias" placeholder="Descreva aqui as acoes e estrategias para o caso especifico."></textarea>
+</div>
+
+<button onclick="gerarTexto()">Gerar Projeto</button>
+
+<div id="output">
+    <h3>Projeto Gerado:</h3>
+    <pre id="textoGerado"></pre>
+</div>
+
+<script>
+    function gerarTexto() {
+        let textoFinal = "Projeto Terapeutico Singular:\n\n";
+
+        // Coletar as seleções da seção de Questões Prioritarias
+        if (document.getElementById('alcool1').checked) {
+            textoFinal += "- Dependencia e abuso do alcool\n";
+        }
+        if (document.getElementById('alcool2').checked) {
+            textoFinal += "- Abstinencia manifestada por sinais e sintomas relacionados a quadro de sindrome de abstinencia alcoolica\n";
+        }
+        if (document.getElementById('alcool3').checked) {
+            textoFinal += "- Consumo para aliviar ou evitar sintomas de abstinencia (uso para conseguir dormir, acordar, etc)\n";
+        }
+        if (document.getElementById('alcool4').checked) {
+            textoFinal += "- Cuidados relacionados a SAA que envolvem medicacao, controle de sinais e prevencao de riscos (SAA grave, delirium, etc)\n";
+        }
+        if (document.getElementById('alcool5').checked) {
+            textoFinal += "- Desejo de diminuir padrao de consumo de bebida alcoolica (dose, frequencia, etc)\n";
+        }
+
+        // Coletar as seleções da seção de Objetivos de Curto Prazo
+        if (document.getElementById('objetivo1').checked) {
+            textoFinal += "- Construir cuidado pautado nas praticas de reducao de danos, sem necessariamente exigir a abstinencia imediata\n";
+        }
+        if (document.getElementById('objetivo2').checked) {
+            textoFinal += "- Mantenção da proposta do cuidado em reducao de danos, respeitando o ritmo e as decisoes do usuario\n";
+        }
+        if (document.getElementById('objetivo3').checked) {
+            textoFinal += "- Construir espacos em que o usuario possa problematizar o consumo abusivo de SPAS e suas implicacoes, sem julgamento\n";
+        }
+        if (document.getElementById('objetivo4').checked) {
+            textoFinal += "- Cuidado em saude mental visando a abstinencia da substancia de abuso, com foco no fortalecimento psiquico do usuario\n";
+        }
+
+        // Coletar a ação e estratégias
+        let acaoEstratégias = document.getElementById('acoesEstratégias').value;
+        if (acaoEstratégias) {
+            textoFinal += "- Ações e estratégias:\n" + acaoEstratégias + "\n";
+        }
+
+        // Exibir o texto gerado
+        document.getElementById('textoGerado').textContent = textoFinal;
+    }
+</script>
+
+</body>
+</html>
