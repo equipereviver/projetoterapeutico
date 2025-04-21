@@ -22,6 +22,7 @@
             margin-top: 20px;
             border-top: 1px solid #ccc;
             padding-top: 20px;
+            font-family: Arial, sans-serif;
         }
         label {
             display: block;
@@ -34,191 +35,63 @@
 <h2>SAE - EXAME FÍSICO</h2>
 
 <div class="section">
-    <div class="checkbox-group">
+    <div class="checkbox-group" id="checkboxes">
         <strong>Pupilas:</strong><br>
-        <label><input type="checkbox"> Fotorreagentes</label>
-        <label><input type="checkbox"> Mióticas</label>
-        <label><input type="checkbox"> Midriáticas</label>
+        <label><input type="checkbox" value="Fotorreagentes"> Fotorreagentes</label>
+        <label><input type="checkbox" value="Mióticas"> Mióticas</label>
+        <label><input type="checkbox" value="Midriáticas"> Midriáticas</label>
 
         <strong>Simetria:</strong><br>
-        <label><input type="checkbox"> Isocóricas</label>
-        <label><input type="checkbox"> Anisocóricas</label>
+        <label><input type="checkbox" value="Isocóricas"> Isocóricas</label>
+        <label><input type="checkbox" value="Anisocóricas"> Anisocóricas</label>
 
         <strong>Olhos:</strong><br>
-        <label><input type="checkbox"> Ptose palpebral</label>
-        <label><input type="checkbox"> Secreções</label>
-        <label><input type="checkbox"> Estrabismo</label>
-        <label><input type="checkbox"> Nistagmo</label>
-        <label><input type="checkbox"> Sem alterações</label>
-        <label><input type="checkbox"> Outros - descrever</label>
+        <label><input type="checkbox" value="Ptose palpebral"> ptose palpebral</label>
+        <label><input type="checkbox" value="Secreções"> secreções</label>
+        <label><input type="checkbox" value="Estrabismo"> estrabismo</label>
+        <label><input type="checkbox" value="Nistagmo"> nistagmo</label>
+        <label><input type="checkbox" value="Sem alterações"> sem alterações</label>
 
         <strong>Nariz:</strong><br>
-        <label><input type="checkbox"> Mucosa íntegra</label>
-        <label><input type="checkbox"> Mucosa prejudicada</label>
-        <label><input type="checkbox"> Outros - descrever</label>
+        <label><input type="checkbox" value="Mucosa íntegra"> mucosa íntegra</label>
+        <label><input type="checkbox" value="Mucosa prejudicada"> mucosa prejudicada</label>
 
         <strong>Cavidade oral:</strong><br>
-        <label><input type="checkbox"> Higiene adequada</label>
-        <label><input type="checkbox"> Higiene inadequada</label>
-        <label><input type="checkbox"> Dentição preservada</label>
-        <label><input type="checkbox"> Dentição prejudicada</label>
-        <label><input type="checkbox"> Lesões - descrever</label>
+        <label><input type="checkbox" value="Higiene adequada"> higiene adequada</label>
+        <label><input type="checkbox" value="Higiene inadequada"> higiene inadequada</label>
+        <label><input type="checkbox" value="Dentição preservada"> dentição preservada</label>
+        <label><input type="checkbox" value="Dentição prejudicada"> dentição prejudicada</label>
 
         <strong>Sistema linfático:</strong><br>
-        <label><input type="checkbox"> Gânglios palpáveis - descrever</label>
-        <label><input type="checkbox"> Sem gânglios palpáveis</label>
+        <label><input type="checkbox" value="Gânglios palpáveis"> gânglios palpáveis</label>
+        <label><input type="checkbox" value="Sem gânglios palpáveis"> sem gânglios palpáveis</label>
 
         <strong>Padrão respiratório:</strong><br>
-        <label><input type="checkbox"> Eupneico</label>
-        <label><input type="checkbox"> Bradpineico</label>
-        <label><input type="checkbox"> Taquipneico</label>
+        <label><input type="checkbox" value="Eupneico"> eupneico</label>
+        <label><input type="checkbox" value="Bradpneico"> bradpneico</label>
+        <label><input type="checkbox" value="Taquipneico"> taquipneico</label>
 
         <strong>Tosse:</strong><br>
-        <label><input type="checkbox"> Ausente</label>
-        <label><input type="checkbox"> Seca</label>
-        <label><input type="checkbox"> Produtiva - há ___ dias</label>
+        <label><input type="checkbox" value="Ausente"> ausente</label>
+        <label><input type="checkbox" value="Seca"> seca</label>
+        <label><input type="checkbox" value="Produtiva"> produtiva</label>
 
         <strong>Ausculta pulmonar:</strong><br>
-        <label><input type="checkbox"> MV+</label>
-        <label><input type="checkbox"> MV diminuídos</label>
+        <label><input type="checkbox" value="MV+"> MV+</label>
+        <label><input type="checkbox" value="MV diminuídos"> MV diminuídos</label>
 
         <strong>Ruídos adventícios:</strong><br>
-        <label><input type="checkbox"> Sem ruídos adventícios</label>
-        <label><input type="checkbox"> Estertor</label>
-        <label><input type="checkbox"> Sibilo</label>
-        <label><input type="checkbox"> Ronco</label>
-        <label><input type="checkbox"> Estridor</label>
-
-        <strong>Ausculta cardíaca:</strong><br>
-        <label><input type="checkbox"> Bulhas cardíacas - descrever</label>
+        <label><input type="checkbox" value="Sem ruídos adventícios"> sem ruídos adventícios</label>
+        <label><input type="checkbox" value="Estertor"> estertor</label>
+        <label><input type="checkbox" value="Sibilo"> sibilo</label>
+        <label><input type="checkbox" value="Ronco"> ronco</label>
+        <label><input type="checkbox" value="Estridor"> estridor</label>
 
         <strong>Pulso:</strong><br>
-        <label><input type="checkbox"> Cheio</label>
-        <label><input type="checkbox"> Fino</label>
-        <label><input type="checkbox"> Rítmico</label>
-        <label><input type="checkbox"> Arrítmico</label>
-
-        <strong>Perfusão periférica:</strong><br>
-        <label><input type="checkbox"> Retorno venoso &lt;3”</label>
-        <label><input type="checkbox"> Retorno venoso &gt;3”</label>
-
-        <strong>Abdome:</strong><br>
-        <label><input type="checkbox"> Plano</label>
-        <label><input type="checkbox"> Globoso</label>
-        <label><input type="checkbox"> Escavado</label>
-        <label><input type="checkbox"> Dolorido à palpação</label>
-        <label><input type="checkbox"> Indolor à palpação</label>
-        <label><input type="checkbox"> Presença de massas</label>
-
-        <strong>Ausculta abdominal:</strong><br>
-        <label><input type="checkbox"> RHA+</label>
-        <label><input type="checkbox"> RHA ausentes</label>
-        <label><input type="checkbox"> RHA aumentados</label>
-        <label><input type="checkbox"> RHA diminuídos</label>
-
-        <strong>Pele e mucosas:</strong><br>
-        <label><input type="checkbox"> Corada</label>
-        <label><input type="checkbox"> Hipocorada ___/4+</label>
-        <label><input type="checkbox"> Acianótica</label>
-        <label><input type="checkbox"> Cianótica</label>
-        <label><input type="checkbox"> Hidratado</label>
-        <label><input type="checkbox"> Desidratado ___/4+</label>
-        <label><input type="checkbox"> Anictérico</label>
-        <label><input type="checkbox"> Ictérico ___/4+</label>
-        <label><input type="checkbox"> Petéquias</label>
-        <label><input type="checkbox"> Equimoses</label>
-        <label><input type="checkbox"> Hematomas</label>
-        <label><input type="checkbox"> Prurido</label>
-        <label><input type="checkbox"> Íntegra</label>
-        <label><input type="checkbox"> Lesões/feridas - observações</label>
-
-        <strong>Sistema musculoesquelético:</strong><br>
-        <label><input type="checkbox"> Sem alterações</label>
-        <label><input type="checkbox"> Deambula com auxílio</label>
-        <label><input type="checkbox"> Acamado</label>
-        <label><input type="checkbox"> Cadeira de rodas</label>
-        <label><input type="checkbox"> Bengala</label>
-        <label><input type="checkbox"> Outros</label>
-        <label><input type="checkbox"> Alterações na marcha - qual?</label>
-        <label><input type="checkbox"> Alteração na força muscular</label>
-        <label><input type="checkbox"> Edema ___/4+</label>
-
-        <strong>Dor:</strong><br>
-        <label><input type="checkbox"> À palpação</label>
-        <label><input type="checkbox"> Ao repouso</label>
-        <label><input type="checkbox"> Ao movimento - local</label>
-
-        <strong>III - Exame Psíquico</strong><br>
-        <label><input type="checkbox"> Aparência - descrever</label>
-
-        <strong>Consciência:</strong><br>
-        <label><input type="checkbox"> Consciente</label>
-        <label><input type="checkbox"> Obnubilado</label>
-        <label><input type="checkbox"> Torporoso</label>
-        <label><input type="checkbox"> Comatoso</label>
-
-        <strong>Atenção:</strong><br>
-        <label><input type="checkbox"> Normovigil</label>
-        <label><input type="checkbox"> Hipervigil</label>
-        <label><input type="checkbox"> Hipovigil</label>
-
-        <strong>Orientação:</strong><br>
-        <label><input type="checkbox"> Alopsíquica (S)</label>
-        <label><input type="checkbox"> Alopsíquica (N)</label>
-        <label><input type="checkbox"> Autopsíquica (S)</label>
-        <label><input type="checkbox"> Autopsíquica (N)</label>
-
-        <strong>Memória:</strong><br>
-        <label><input type="checkbox"> Preservada</label>
-        <label><input type="checkbox"> Alterada - tipo</label>
-
-        <strong>Linguagem:</strong><br>
-        <label><input type="checkbox"> Normal</label>
-        <label><input type="checkbox"> Prolixo</label>
-        <label><input type="checkbox"> Lacônico</label>
-        <label><input type="checkbox"> Logorréico</label>
-        <label><input type="checkbox"> Mutismo</label>
-
-        <strong>Afetividade:</strong><br>
-        <label><input type="checkbox"> Associado</label>
-        <label><input type="checkbox"> Dissociado</label>
-        <label><input type="checkbox"> Embotado</label>
-
-        <strong>Humor:</strong><br>
-        <label><input type="checkbox"> Eutímico</label>
-        <label><input type="checkbox"> Hipertímico</label>
-        <label><input type="checkbox"> Hipotímico</label>
-
-        <strong>Vontade:</strong><br>
-        <label><input type="checkbox"> Volição preservada</label>
-        <label><input type="checkbox"> Impulsividade</label>
-        <label><input type="checkbox"> Compulsão</label>
-        <label><input type="checkbox"> Volição diminuída</label>
-        <label><input type="checkbox"> Volição abolida</label>
-
-        <strong>Psicomotricidade:</strong><br>
-        <label><input type="checkbox"> Inalterado</label>
-        <label><input type="checkbox"> Estupor</label>
-        <label><input type="checkbox"> Agitação psicomotora</label>
-        <label><input type="checkbox"> Lentificação psicomotora</label>
-
-        <strong>Pensamento:</strong><br>
-        <label><input type="checkbox"> Organizado</label>
-        <label><input type="checkbox"> Desorganizado</label>
-        <label><input type="checkbox"> Inalterado</label>
-        <label><input type="checkbox"> Acelerado</label>
-        <label><input type="checkbox"> Lentificado</label>
-        <label><input type="checkbox"> Normal</label>
-        <label><input type="checkbox"> Delirante</label>
-        <label><input type="checkbox"> Ideação suicida</label>
-        <label><input type="checkbox"> Persecutoriedade</label>
-        <label><input type="checkbox"> Tipo de delírio ou persecutoriedade - descrever</label>
-
-        <strong>Senso e percepção:</strong><br>
-        <label><input type="checkbox"> Sem alterações</label>
-        <label><input type="checkbox"> Ilusão</label>
-        <label><input type="checkbox"> Despersonalização</label>
-        <label><input type="checkbox"> Alucinação - tipo</label>
+        <label><input type="checkbox" value="Cheio"> cheio</label>
+        <label><input type="checkbox" value="Fino"> fino</label>
+        <label><input type="checkbox" value="Rítmico"> rítmico</label>
+        <label><input type="checkbox" value="Arrítmico"> arrítmico</label>
     </div>
 </div>
 
@@ -226,24 +99,41 @@
 
 <div id="output">
     <h3>Resultado Gerado:</h3>
-    <pre id="textoGerado"></pre>
+    <div id="textoGerado"></div>
 </div>
 
 <script>
     function gerarTexto() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        let textoFinal = "SAE - EXAME FÍSICO\n\n";
+        const container = document.getElementById("checkboxes");
+        const grupos = Array.from(container.querySelectorAll("strong"));
 
-        checkboxes.forEach(cb => {
-            if (cb.checked) {
-                textoFinal += "- " + cb.parentElement.textContent.trim() + "\n";
+        let resultado = {};
+
+        grupos.forEach(grupo => {
+            const titulo = grupo.textContent.trim().replace(/[:：]/g, "");
+            const checkboxes = [];
+            let next = grupo.nextElementSibling;
+
+            while (next && next.tagName !== "STRONG") {
+                if (next.tagName === "LABEL" && next.querySelector('input[type="checkbox"]').checked) {
+                    checkboxes.push(next.textContent.trim());
+                }
+                next = next.nextElementSibling;
+            }
+
+            if (checkboxes.length > 0) {
+                resultado[titulo] = checkboxes;
             }
         });
 
-        document.getElementById("textoGerado").innerText = textoFinal;
+        let textoFinal = '';
+        for (let titulo in resultado) {
+            textoFinal += `<strong>${titulo}:</strong> ${resultado[titulo].join(', ')}<br><br>`;
+        }
+
+        document.getElementById("textoGerado").innerHTML = textoFinal;
     }
 </script>
 
 </body>
 </html>
-
