@@ -151,11 +151,10 @@
 
 <script>
   document.getElementById('formulario').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita recarregamento da página
+    event.preventDefault();
     const formData = new FormData(event.target);
     const dados = {};
 
-    // Agrupa dados com nomes repetidos (como checkboxes)
     for (let [chave, valor] of formData.entries()) {
       if (dados[chave]) {
         if (Array.isArray(dados[chave])) {
@@ -168,7 +167,6 @@
       }
     }
 
-    // Mapeia nomes para rótulos mais amigáveis (parcial, pode ser expandido)
     const rotulos = {
       acolhimento: "Tipo de Acolhimento",
       encaminhado: "Encaminhado por",
@@ -202,17 +200,16 @@
     };
 
     let output = '<h2>Dados Recebidos:</h2>';
-    output += '<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">';
+    output += '<div style="font-size: 0.9em; line-height: 1.5;">';
     for (let chave in dados) {
       let label = rotulos[chave] || chave;
       let valor = Array.isArray(dados[chave]) ? dados[chave].join(', ') : dados[chave];
-      output += `<tr><td><strong>${label}</strong></td><td>${valor}</td></tr>`;
+      output += `<p><strong>${label}:</strong> ${valor}</p>`;
     }
-    output += '</table>';
+    output += '</div>';
     document.getElementById('resultado').innerHTML = output;
   });
-
-  </script>
+</script>
 
 </body>
 </html>
