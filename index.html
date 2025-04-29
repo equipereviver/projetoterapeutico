@@ -8,7 +8,9 @@
     body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.6; }
     label { display: block; margin-top: 15px; font-weight: bold; }
     input[type="text"], textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
+    fieldset { border: none; padding: 0; margin: 0; }
     .checkbox-group, .radio-group { margin: 8px 0; }
+    .checkbox-group label, .radio-group label { display: inline-block; margin-right: 10px; font-weight: normal; }
     h2 { margin-top: 30px; }
     .spa-block { border: 1px solid #ccc; padding: 15px; margin-top: 20px; background: #f9f9f9; }
     #resultado { margin-top: 30px; }
@@ -19,11 +21,11 @@
   <h1>Ficha de Acolhimento CAPS AD III</h1>
 
   <form id="formulario" action="#">
-    <label for="acolhimento">Tipo de Acolhimento:</label>
-    <div class="radio-group">
-      <input type="radio" name="acolhimento" value="primeiro" id="primeiro"> <label for="primeiro">Primeiro Acolhimento</label>
-      <input type="radio" name="acolhimento" value="reacolhimento" id="reacolhimento"> <label for="reacolhimento">Reacolhimento</label>
-    </div>
+    <fieldset class="radio-group">
+      <legend><strong>Tipo de Acolhimento:</strong></legend>
+      <label><input type="radio" name="acolhimento" value="primeiro"> Primeiro Acolhimento</label>
+      <label><input type="radio" name="acolhimento" value="reacolhimento"> Reacolhimento</label>
+    </fieldset>
 
     <label for="encaminhado">Encaminhado por:</label>
     <input type="text" name="encaminhado" id="encaminhado">
@@ -43,11 +45,11 @@
     <label for="situacao_profissional">Situação Profissional:</label>
     <input type="text" name="situacao_profissional" id="situacao_profissional">
 
-    <label>Beneficiário:</label>
-    <div class="radio-group">
-      <input type="radio" name="beneficiario" value="sim" id="beneficiario_sim"> <label for="beneficiario_sim">Sim</label>
-      <input type="radio" name="beneficiario" value="nao" id="beneficiario_nao"> <label for="beneficiario_nao">Não</label>
-    </div>
+    <fieldset class="radio-group">
+      <legend><strong>Beneficiário:</strong></legend>
+      <label><input type="radio" name="beneficiario" value="sim"> Sim</label>
+      <label><input type="radio" name="beneficiario" value="nao"> Não</label>
+    </fieldset>
 
     <label for="beneficio_qual">Qual benefício?</label>
     <input type="text" name="beneficio_qual" id="beneficio_qual">
@@ -63,21 +65,21 @@
     <label for="alergias">Alergias (Se sim, quais?):</label>
     <input type="text" name="alergias" id="alergias">
 
-    <label>Questões clínicas relatadas:</label>
-    <div class="checkbox-group">
-      <input type="checkbox" name="questoes_clinicas" value="hipertensao" id="hipertensao"> <label for="hipertensao">Hipertensão</label>
-      <input type="checkbox" name="questoes_clinicas" value="epilepsia" id="epilepsia"> <label for="epilepsia">Epilepsia</label>
-      <input type="checkbox" name="questoes_clinicas" value="hiv" id="hiv"> <label for="hiv">HIV+</label>
-      <input type="checkbox" name="questoes_clinicas" value="diabetes" id="diabetes"> <label for="diabetes">Diabetes</label>
-      <input type="checkbox" name="questoes_clinicas" value="cancer" id="cancer"> <label for="cancer">Câncer</label>
-      <input type="checkbox" name="questoes_clinicas" value="sifilis" id="sifilis"> <label for="sifilis">Sífilis</label>
-      <input type="checkbox" name="questoes_clinicas" value="asma" id="asma"> <label for="asma">Asma</label>
-      <input type="checkbox" name="questoes_clinicas" value="dpoc" id="dpoc"> <label for="dpoc">DPOC</label>
-      <input type="checkbox" name="questoes_clinicas" value="tuberculose" id="tuberculose"> <label for="tuberculose">Tuberculose</label>
-      <input type="checkbox" name="questoes_clinicas" value="covid" id="covid"> <label for="covid">COVID-19</label>
-      <input type="checkbox" name="questoes_clinicas" value="hepatites" id="hepatites"> <label for="hepatites">Hepatites</label>
-      <input type="checkbox" name="questoes_clinicas" value="cardiacas" id="cardiacas"> <label for="cardiacas">Doenças Cardíacas</label>
-    </div>
+    <fieldset class="checkbox-group">
+      <legend><strong>Questões clínicas relatadas:</strong></legend>
+      <label><input type="checkbox" name="questoes_clinicas" value="hipertensao"> Hipertensão</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="epilepsia"> Epilepsia</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="hiv"> HIV+</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="diabetes"> Diabetes</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="cancer"> Câncer</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="sifilis"> Sífilis</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="asma"> Asma</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="dpoc"> DPOC</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="tuberculose"> Tuberculose</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="covid"> COVID-19</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="hepatites"> Hepatites</label>
+      <label><input type="checkbox" name="questoes_clinicas" value="cardiacas"> Doenças Cardíacas</label>
+    </fieldset>
 
     <label for="outros_clinicos">Outros (especificar):</label>
     <input type="text" name="outros_clinicos" id="outros_clinicos">
@@ -96,28 +98,34 @@
 
     <h2>Uso de Substâncias Psicoativas</h2>
 
-    <!-- SPAs 1 a 4 -->
+    <!-- Exemplo de SPA 1 (copiar para SPA 2, 3 e 4 conforme necessidade) -->
     <div class="spa-block">
       <h3>SPA 1</h3>
       <label for="spa1_substancia">Substância:</label>
       <input type="text" name="spa1_substancia" id="spa1_substancia">
-      <label>Situação:</label>
-      <input type="radio" name="spa1_situacao" value="em_uso" id="spa1_em_uso"> <label for="spa1_em_uso">Em uso</label>
-      <input type="radio" name="spa1_situacao" value="cessado" id="spa1_cessado"> <label for="spa1_cessado">Cessado</label>
+
+      <fieldset class="radio-group">
+        <legend><strong>Situação:</strong></legend>
+        <label><input type="radio" name="spa1_situacao" value="em_uso"> Em uso</label>
+        <label><input type="radio" name="spa1_situacao" value="cessado"> Cessado</label>
+      </fieldset>
+
       <label for="spa1_idade">Idade 1º Uso:</label>
       <input type="text" name="spa1_idade" id="spa1_idade">
+
       <label for="spa1_frequencia">Frequência:</label>
       <input type="text" name="spa1_frequencia" id="spa1_frequencia">
+
       <label for="spa1_quantidade">Quantidade:</label>
       <input type="text" name="spa1_quantidade" id="spa1_quantidade">
+
       <label for="spa1_ultimo">Último Uso:</label>
       <input type="text" name="spa1_ultimo" id="spa1_ultimo">
+
       <label for="spa1_fissura">Fissura:</label>
       <input type="text" name="spa1_fissura" id="spa1_fissura">
     </div>
 
-    <!-- Repetir o mesmo bloco para SPA 2, 3 e 4, como feito no SPA 1 -->
-    
     <h2>Registrar no campo Avaliação do PEC</h2>
     <label for="avaliacao_caso">Outras Impressões do Caso:</label>
     <textarea name="avaliacao_caso" id="avaliacao_caso"></textarea>
@@ -126,11 +134,11 @@
     <input type="text" name="diagnostico" id="diagnostico">
 
     <h2>Plano do PEC</h2>
-    <label>Plano Inicial:</label>
-    <div class="radio-group">
-      <input type="radio" name="plano_inicial" value="inserido" id="inserido"> <label for="inserido">Inserido</label>
-      <input type="radio" name="plano_inicial" value="nao_inserido" id="nao_inserido"> <label for="nao_inserido">Não Inserido</label>
-    </div>
+    <fieldset class="radio-group">
+      <legend><strong>Plano Inicial:</strong></legend>
+      <label><input type="radio" name="plano_inicial" value="inserido"> Inserido</label>
+      <label><input type="radio" name="plano_inicial" value="nao_inserido"> Não Inserido</label>
+    </fieldset>
 
     <label for="encaminhamentos">Encaminhamentos Realizados:</label>
     <textarea name="encaminhamentos" id="encaminhamentos"></textarea>
@@ -143,7 +151,7 @@
 
   <script>
     document.getElementById('formulario').addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita recarregamento da página
+      event.preventDefault();
       const formData = new FormData(event.target);
       let output = '<h2>Dados Recebidos:</h2><ul>';
       for (let [chave, valor] of formData.entries()) {
