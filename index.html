@@ -1,139 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAE - EXAME FÍSICO</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            color: #004080;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .checkbox-group {
-            margin-left: 20px;
-        }
-        #output {
-            margin-top: 20px;
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
-            font-family: Arial, sans-serif;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Ficha de Acolhimento CAPS AD III</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    input[type="text"], textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
+    .checkbox-group, .radio-group { margin: 10px 0; }
+  </style>
 </head>
 <body>
 
-<h2>SAE - EXAME FÍSICO</h2>
+  <h1>Ficha de Acolhimento CAPS AD III</h1>
 
-<div class="section">
-    <div class="checkbox-group" id="checkboxes">
-        <strong>Pupilas:</strong><br>
-        <label><input type="checkbox" value="Fotorreagentes"> Fotorreagentes</label>
-        <label><input type="checkbox" value="Mióticas"> Mióticas</label>
-        <label><input type="checkbox" value="Midriáticas"> Midriáticas</label>
+  <form>
 
-        <strong>Simetria:</strong><br>
-        <label><input type="checkbox" value="Isocóricas"> Isocóricas</label>
-        <label><input type="checkbox" value="Anisocóricas"> Anisocóricas</label>
-
-        <strong>Olhos:</strong><br>
-        <label><input type="checkbox" value="Ptose palpebral"> ptose palpebral</label>
-        <label><input type="checkbox" value="Secreções"> secreções</label>
-        <label><input type="checkbox" value="Estrabismo"> estrabismo</label>
-        <label><input type="checkbox" value="Nistagmo"> nistagmo</label>
-        <label><input type="checkbox" value="Sem alterações"> sem alterações</label>
-
-        <strong>Nariz:</strong><br>
-        <label><input type="checkbox" value="Mucosa íntegra"> mucosa íntegra</label>
-        <label><input type="checkbox" value="Mucosa prejudicada"> mucosa prejudicada</label>
-
-        <strong>Cavidade oral:</strong><br>
-        <label><input type="checkbox" value="Higiene adequada"> higiene adequada</label>
-        <label><input type="checkbox" value="Higiene inadequada"> higiene inadequada</label>
-        <label><input type="checkbox" value="Dentição preservada"> dentição preservada</label>
-        <label><input type="checkbox" value="Dentição prejudicada"> dentição prejudicada</label>
-
-        <strong>Sistema linfático:</strong><br>
-        <label><input type="checkbox" value="Gânglios palpáveis"> gânglios palpáveis</label>
-        <label><input type="checkbox" value="Sem gânglios palpáveis"> sem gânglios palpáveis</label>
-
-        <strong>Padrão respiratório:</strong><br>
-        <label><input type="checkbox" value="Eupneico"> eupneico</label>
-        <label><input type="checkbox" value="Bradpneico"> bradpneico</label>
-        <label><input type="checkbox" value="Taquipneico"> taquipneico</label>
-
-        <strong>Tosse:</strong><br>
-        <label><input type="checkbox" value="Ausente"> ausente</label>
-        <label><input type="checkbox" value="Seca"> seca</label>
-        <label><input type="checkbox" value="Produtiva"> produtiva</label>
-
-        <strong>Ausculta pulmonar:</strong><br>
-        <label><input type="checkbox" value="MV+"> MV+</label>
-        <label><input type="checkbox" value="MV diminuídos"> MV diminuídos</label>
-
-        <strong>Ruídos adventícios:</strong><br>
-        <label><input type="checkbox" value="Sem ruídos adventícios"> sem ruídos adventícios</label>
-        <label><input type="checkbox" value="Estertor"> estertor</label>
-        <label><input type="checkbox" value="Sibilo"> sibilo</label>
-        <label><input type="checkbox" value="Ronco"> ronco</label>
-        <label><input type="checkbox" value="Estridor"> estridor</label>
-
-        <strong>Pulso:</strong><br>
-        <label><input type="checkbox" value="Cheio"> cheio</label>
-        <label><input type="checkbox" value="Fino"> fino</label>
-        <label><input type="checkbox" value="Rítmico"> rítmico</label>
-        <label><input type="checkbox" value="Arrítmico"> arrítmico</label>
+    <label>Tipo de Acolhimento:</label>
+    <div class="radio-group">
+      <input type="radio" name="acolhimento" value="primeiro"> Primeiro Acolhimento<br>
+      <input type="radio" name="acolhimento" value="reacolhimento"> Reacolhimento
     </div>
-</div>
 
-<button onclick="gerarTexto()">Gerar Resultado</button>
+    <label>Encaminhado por:</label>
+    <input type="text" name="encaminhado">
 
-<div id="output">
-    <h3>Resultado Gerado:</h3>
-    <div id="textoGerado"></div>
-</div>
+    <label>Motivo de Acolhimento:</label>
+    <textarea name="motivo"></textarea>
 
-<script>
-    function gerarTexto() {
-        const container = document.getElementById("checkboxes");
-        const grupos = Array.from(container.querySelectorAll("strong"));
+    <label>Equipe de Referência do CS:</label>
+    <input type="text" name="equipe_cs">
 
-        let resultado = {};
+    <label>Profissionais de Referência no CAPS:</label>
+    <input type="text" name="profissionais_caps">
 
-        grupos.forEach(grupo => {
-            const titulo = grupo.textContent.trim().replace(/[:：]/g, "");
-            const checkboxes = [];
-            let next = grupo.nextElementSibling;
+    <label>Rede de Apoio:</label>
+    <input type="text" name="rede_apoio">
 
-            while (next && next.tagName !== "STRONG") {
-                if (next.tagName === "LABEL" && next.querySelector('input[type="checkbox"]').checked) {
-                    checkboxes.push(next.textContent.trim());
-                }
-                next = next.nextElementSibling;
-            }
+    <label>Situação Profissional:</label>
+    <input type="text" name="situacao_profissional">
 
-            if (checkboxes.length > 0) {
-                resultado[titulo] = checkboxes;
-            }
-        });
+    <label>Beneficiário:</label>
+    <div class="radio-group">
+      <input type="radio" name="beneficiario" value="sim"> Sim
+      <input type="radio" name="beneficiario" value="nao"> Não
+    </div>
+    <label>Qual benefício?</label>
+    <input type="text" name="qual_beneficio">
 
-        let textoFinal = '';
-        for (let titulo in resultado) {
-            textoFinal += `<strong>${titulo}:</strong> ${resultado[titulo].join(', ')}<br><br>`;
-        }
+    <label>Histórico de vida:</label>
+    <textarea name="historico_vida"></textarea>
 
-        document.getElementById("textoGerado").innerHTML = textoFinal;
-    }
-</script>
+    <label>Motivação para o tratamento:</label>
+    <textarea name="motivacao"></textarea>
+
+    <h2>Aspectos Clínicos</h2>
+
+    <label>Alergias (Se sim, quais?):</label>
+    <input type="text" name="alergias">
+
+    <label>Questões clínicas relatadas:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" name="clinicas" value="hipertensao"> Hipertensão<br>
+      <input type="checkbox" name="clinicas" value="epilepsia"> Epilepsia<br>
+      <input type="checkbox" name="clinicas" value="hiv"> HIV+<br>
+      <input type="checkbox" name="clinicas" value="diabetes"> Diabetes<br>
+      <input type="checkbox" name="clinicas" value="cancer"> Câncer<br>
+      <input type="checkbox" name="clinicas" value="sifilis"> Sífilis<br>
+      <input type="checkbox" name="clinicas" value="asma"> Asma<br>
+      <input type="checkbox" name="clinicas" value="dpoc"> DPOC<br>
+      <input type="checkbox" name="clinicas" value="tuberculose"> Tuberculose<br>
+      <input type="checkbox" name="clinicas" value="covid"> COVID-19<br>
+      <input type="checkbox" name="clinicas" value="hepatites"> Hepatites<br>
+      <input type="checkbox" name="clinicas" value="cardiacas"> Doenças Cardíacas<br>
+      <input type="checkbox" name="clinicas" value="outros"> Outros
+    </div>
+    <label>Especificar outros:</label>
+    <input type="text" name="outros_clinicos">
+
+    <label>Comorbidades Psiquiátricas:</label>
+    <textarea name="comorbidades"></textarea>
+
+    <label>Medicações em uso:</label>
+    <textarea name="medicacoes"></textarea>
+
+    <label>Histórico de tratamentos psiquiátricos:</label>
+    <textarea name="historico_tratamentos"></textarea>
+
+    <label>Comportamento Suicida (ideação, tentativas etc.):</label>
+    <textarea name="suicidio"></textarea>
+
+    <h2>SPA (Substâncias Psicoativas)</h2>
+
+    <!-- Você pode duplicar este bloco para SPA 2, 3 e 4 -->
+    <label>SPA 1 - Substância:</label>
+    <input type="text" name="spa1_substancia">
+    <label>Situação:</label>
+    <input type="radio" name="spa1_situacao" value="uso"> Em uso
+    <input type="radio" name="spa1_situacao" value="cessado"> Cessado<br>
+    <label>Idade 1º uso:</label>
+    <input type="text" name="spa1_idade">
+    <label>Frequência:</label>
+    <input type="text" name="spa1_frequencia">
+    <label>Quantidade:</label>
+    <input type="text" name="spa1_quantidade">
+    <label>Último uso:</label>
+    <input type="text" name="spa1_ultimo">
+    <label>Fissura:</label>
+    <input type="text" name="spa1_fissura">
+
+    <h2>Exame Psíquico</h2>
+
+    <label>Aparência:</label>
+    <input type="text" name="aparencia">
+
+    <label>Consciência:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" name="consciencia" value="consciente"> Consciente
+      <input type="checkbox" name="consciencia" value="obnubilado"> Obnubilado
+      <input type="checkbox" name="consciencia" value="torporoso"> Torporoso
+      <input type="checkbox" name="consciencia" value="comatoso"> Comatoso
+    </div>
+
+    <label>Atenção:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" name="atencao" value="normovigil"> Normovigil
+      <input type="checkbox" name="atencao" value="hipervigil"> Hipervigil
+      <input type="checkbox" name="atencao" value="hipovigil"> Hipovigil
+    </div>
+
+    <label>Orientação Alopsíquica:</label>
+    <input type="radio" name="orientacao_alo" value="sim"> Sim
+    <input type="radio" name="orientacao_alo" value="nao"> Não
+
+    <label>Orientação Autopsíquica:</label>
+    <input type="radio" name="orientacao_auto" value="sim"> Sim
+    <input type="radio" name="orientacao_auto" value="nao"> Não
+
+    <label>Memória:</label>
+    <input type="checkbox" name="memoria" value="preservada"> Preservada
+    <input type="checkbox" name="memoria" value="alterada"> Alterada<br>
+    <label>Tipo de alteração:</label>
+    <input type="text" name="memoria_alteracao">
+
+    <label>Linguagem:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" name="linguagem" value="normal"> Normal
+      <input type="checkbox" name="linguagem" value="prolixo"> Prolixo
+      <input type="checkbox" name="linguagem" value="laconico"> Lacônico
+      <input type="checkbox" name="linguagem" value="logorreico"> Logorréico
+      <input type="checkbox" name="linguagem" value="mutismo"> Mutismo
+    </div>
+
+    <label>Outras Impressões:</label>
+    <textarea name="impressao"></textarea>
+
+    <label>Diagnóstico - CIAP 2:</label>
+    <input type="text" name="diagnostico">
+
+    <label>Plano Inicial:</label>
+    <input type="radio" name="plano" value="inserido"> Inserido
+    <input type="radio" name="plano" value="nao_inserido"> Não inserido
+
+    <label>Encaminhamentos:</label>
+    <textarea name="encaminhamentos"></textarea>
+
+    <br><br>
+    <button type="submit">Enviar</button>
+  </form>
 
 </body>
 </html>
