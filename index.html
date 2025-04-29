@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>Ficha de Acolhimento CAPS AD III</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
-    label { font-weight: bold; display: block; margin-top: 15px; }
+    body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.6; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
     input[type="text"], textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
-    .checkbox-group, .radio-group { margin: 10px 0; }
+    .checkbox-group, .radio-group { margin: 8px 0; }
+    h2 { margin-top: 30px; }
+    .spa-block { border: 1px solid #ccc; padding: 15px; margin-top: 20px; background: #f9f9f9; }
   </style>
 </head>
 <body>
@@ -18,7 +20,7 @@
 
     <label>Tipo de Acolhimento:</label>
     <div class="radio-group">
-      <input type="radio" name="acolhimento" value="primeiro"> Primeiro Acolhimento<br>
+      <input type="radio" name="acolhimento" value="primeiro"> Primeiro Acolhimento
       <input type="radio" name="acolhimento" value="reacolhimento"> Reacolhimento
     </div>
 
@@ -45,14 +47,15 @@
       <input type="radio" name="beneficiario" value="sim"> Sim
       <input type="radio" name="beneficiario" value="nao"> Não
     </div>
-    <label>Qual benefício?</label>
-    <input type="text" name="qual_beneficio">
 
-    <label>Histórico de vida:</label>
+    <label>Qual benefício?</label>
+    <input type="text" name="beneficio_qual">
+
+    <label>Histórico de Vida:</label>
     <textarea name="historico_vida"></textarea>
 
-    <label>Motivação para o tratamento:</label>
-    <textarea name="motivacao"></textarea>
+    <label>Motivação para o Tratamento:</label>
+    <textarea name="motivacao_tratamento"></textarea>
 
     <h2>Aspectos Clínicos</h2>
 
@@ -61,112 +64,134 @@
 
     <label>Questões clínicas relatadas:</label>
     <div class="checkbox-group">
-      <input type="checkbox" name="clinicas" value="hipertensao"> Hipertensão<br>
-      <input type="checkbox" name="clinicas" value="epilepsia"> Epilepsia<br>
-      <input type="checkbox" name="clinicas" value="hiv"> HIV+<br>
-      <input type="checkbox" name="clinicas" value="diabetes"> Diabetes<br>
-      <input type="checkbox" name="clinicas" value="cancer"> Câncer<br>
-      <input type="checkbox" name="clinicas" value="sifilis"> Sífilis<br>
-      <input type="checkbox" name="clinicas" value="asma"> Asma<br>
-      <input type="checkbox" name="clinicas" value="dpoc"> DPOC<br>
-      <input type="checkbox" name="clinicas" value="tuberculose"> Tuberculose<br>
-      <input type="checkbox" name="clinicas" value="covid"> COVID-19<br>
-      <input type="checkbox" name="clinicas" value="hepatites"> Hepatites<br>
-      <input type="checkbox" name="clinicas" value="cardiacas"> Doenças Cardíacas<br>
-      <input type="checkbox" name="clinicas" value="outros"> Outros
+      <input type="checkbox" name="questoes_clinicas" value="hipertensao"> Hipertensão
+      <input type="checkbox" name="questoes_clinicas" value="epilepsia"> Epilepsia
+      <input type="checkbox" name="questoes_clinicas" value="hiv"> HIV+
+      <input type="checkbox" name="questoes_clinicas" value="diabetes"> Diabetes
+      <input type="checkbox" name="questoes_clinicas" value="cancer"> Câncer
+      <input type="checkbox" name="questoes_clinicas" value="sifilis"> Sífilis
+      <input type="checkbox" name="questoes_clinicas" value="asma"> Asma
+      <input type="checkbox" name="questoes_clinicas" value="dpoc"> DPOC
+      <input type="checkbox" name="questoes_clinicas" value="tuberculose"> Tuberculose
+      <input type="checkbox" name="questoes_clinicas" value="covid"> COVID-19
+      <input type="checkbox" name="questoes_clinicas" value="hepatites"> Hepatites
+      <input type="checkbox" name="questoes_clinicas" value="cardiacas"> Doenças Cardíacas
     </div>
-    <label>Especificar outros:</label>
+
+    <label>Outros (especificar):</label>
     <input type="text" name="outros_clinicos">
 
     <label>Comorbidades Psiquiátricas:</label>
-    <textarea name="comorbidades"></textarea>
+    <textarea name="comorbidades_psiquiatricas"></textarea>
 
-    <label>Medicações em uso:</label>
+    <label>Medicações em Uso:</label>
     <textarea name="medicacoes"></textarea>
 
-    <label>Histórico de tratamentos psiquiátricos:</label>
+    <label>Histórico de Tratamentos Psiquiátricos:</label>
     <textarea name="historico_tratamentos"></textarea>
 
-    <label>Comportamento Suicida (ideação, tentativas etc.):</label>
-    <textarea name="suicidio"></textarea>
+    <label>Avaliação de Risco / Comportamento Suicida:</label>
+    <textarea name="risco_suicida"></textarea>
 
-    <h2>SPA (Substâncias Psicoativas)</h2>
+    <h2>Uso de Substâncias Psicoativas</h2>
 
-    <!-- Você pode duplicar este bloco para SPA 2, 3 e 4 -->
-    <label>SPA 1 - Substância:</label>
-    <input type="text" name="spa1_substancia">
-    <label>Situação:</label>
-    <input type="radio" name="spa1_situacao" value="uso"> Em uso
-    <input type="radio" name="spa1_situacao" value="cessado"> Cessado<br>
-    <label>Idade 1º uso:</label>
-    <input type="text" name="spa1_idade">
-    <label>Frequência:</label>
-    <input type="text" name="spa1_frequencia">
-    <label>Quantidade:</label>
-    <input type="text" name="spa1_quantidade">
-    <label>Último uso:</label>
-    <input type="text" name="spa1_ultimo">
-    <label>Fissura:</label>
-    <input type="text" name="spa1_fissura">
-
-    <h2>Exame Psíquico</h2>
-
-    <label>Aparência:</label>
-    <input type="text" name="aparencia">
-
-    <label>Consciência:</label>
-    <div class="checkbox-group">
-      <input type="checkbox" name="consciencia" value="consciente"> Consciente
-      <input type="checkbox" name="consciencia" value="obnubilado"> Obnubilado
-      <input type="checkbox" name="consciencia" value="torporoso"> Torporoso
-      <input type="checkbox" name="consciencia" value="comatoso"> Comatoso
+    <!-- SPAs 1 a 4 -->
+    <div class="spa-block">
+      <h3>SPA 1</h3>
+      <label>Substância:</label>
+      <input type="text" name="spa1_substancia">
+      <label>Situação:</label>
+      <input type="radio" name="spa1_situacao" value="em_uso"> Em uso
+      <input type="radio" name="spa1_situacao" value="cessado"> Cessado
+      <label>Idade 1º Uso:</label>
+      <input type="text" name="spa1_idade">
+      <label>Frequência:</label>
+      <input type="text" name="spa1_frequencia">
+      <label>Quantidade:</label>
+      <input type="text" name="spa1_quantidade">
+      <label>Último Uso:</label>
+      <input type="text" name="spa1_ultimo">
+      <label>Fissura:</label>
+      <input type="text" name="spa1_fissura">
     </div>
 
-    <label>Atenção:</label>
-    <div class="checkbox-group">
-      <input type="checkbox" name="atencao" value="normovigil"> Normovigil
-      <input type="checkbox" name="atencao" value="hipervigil"> Hipervigil
-      <input type="checkbox" name="atencao" value="hipovigil"> Hipovigil
+    <div class="spa-block">
+      <h3>SPA 2</h3>
+      <label>Substância:</label>
+      <input type="text" name="spa2_substancia">
+      <label>Situação:</label>
+      <input type="radio" name="spa2_situacao" value="em_uso"> Em uso
+      <input type="radio" name="spa2_situacao" value="cessado"> Cessado
+      <label>Idade 1º Uso:</label>
+      <input type="text" name="spa2_idade">
+      <label>Frequência:</label>
+      <input type="text" name="spa2_frequencia">
+      <label>Quantidade:</label>
+      <input type="text" name="spa2_quantidade">
+      <label>Último Uso:</label>
+      <input type="text" name="spa2_ultimo">
+      <label>Fissura:</label>
+      <input type="text" name="spa2_fissura">
     </div>
 
-    <label>Orientação Alopsíquica:</label>
-    <input type="radio" name="orientacao_alo" value="sim"> Sim
-    <input type="radio" name="orientacao_alo" value="nao"> Não
-
-    <label>Orientação Autopsíquica:</label>
-    <input type="radio" name="orientacao_auto" value="sim"> Sim
-    <input type="radio" name="orientacao_auto" value="nao"> Não
-
-    <label>Memória:</label>
-    <input type="checkbox" name="memoria" value="preservada"> Preservada
-    <input type="checkbox" name="memoria" value="alterada"> Alterada<br>
-    <label>Tipo de alteração:</label>
-    <input type="text" name="memoria_alteracao">
-
-    <label>Linguagem:</label>
-    <div class="checkbox-group">
-      <input type="checkbox" name="linguagem" value="normal"> Normal
-      <input type="checkbox" name="linguagem" value="prolixo"> Prolixo
-      <input type="checkbox" name="linguagem" value="laconico"> Lacônico
-      <input type="checkbox" name="linguagem" value="logorreico"> Logorréico
-      <input type="checkbox" name="linguagem" value="mutismo"> Mutismo
+    <div class="spa-block">
+      <h3>SPA 3</h3>
+      <label>Substância:</label>
+      <input type="text" name="spa3_substancia">
+      <label>Situação:</label>
+      <input type="radio" name="spa3_situacao" value="em_uso"> Em uso
+      <input type="radio" name="spa3_situacao" value="cessado"> Cessado
+      <label>Idade 1º Uso:</label>
+      <input type="text" name="spa3_idade">
+      <label>Frequência:</label>
+      <input type="text" name="spa3_frequencia">
+      <label>Quantidade:</label>
+      <input type="text" name="spa3_quantidade">
+      <label>Último Uso:</label>
+      <input type="text" name="spa3_ultimo">
+      <label>Fissura:</label>
+      <input type="text" name="spa3_fissura">
     </div>
 
-    <label>Outras Impressões:</label>
-    <textarea name="impressao"></textarea>
+    <div class="spa-block">
+      <h3>SPA 4</h3>
+      <label>Substância:</label>
+      <input type="text" name="spa4_substancia">
+      <label>Situação:</label>
+      <input type="radio" name="spa4_situacao" value="em_uso"> Em uso
+      <input type="radio" name="spa4_situacao" value="cessado"> Cessado
+      <label>Idade 1º Uso:</label>
+      <input type="text" name="spa4_idade">
+      <label>Frequência:</label>
+      <input type="text" name="spa4_frequencia">
+      <label>Quantidade:</label>
+      <input type="text" name="spa4_quantidade">
+      <label>Último Uso:</label>
+      <input type="text" name="spa4_ultimo">
+      <label>Fissura:</label>
+      <input type="text" name="spa4_fissura">
+    </div>
 
-    <label>Diagnóstico - CIAP 2:</label>
+    <h2>Registrar no campo Avaliação do PEC</h2>
+
+    <label>Outras Impressões do Caso:</label>
+    <textarea name="avaliacao_caso"></textarea>
+
+    <label>Diagnóstico – CIAP 2:</label>
     <input type="text" name="diagnostico">
 
-    <label>Plano Inicial:</label>
-    <input type="radio" name="plano" value="inserido"> Inserido
-    <input type="radio" name="plano" value="nao_inserido"> Não inserido
+    <h2>Plano do PEC</h2>
 
-    <label>Encaminhamentos:</label>
+    <label>Plano Inicial:</label>
+    <input type="radio" name="plano_inicial" value="inserido"> Inserido
+    <input type="radio" name="plano_inicial" value="nao_inserido"> Não Inserido
+
+    <label>Encaminhamentos Realizados:</label>
     <textarea name="encaminhamentos"></textarea>
 
     <br><br>
     <button type="submit">Enviar</button>
+
   </form>
 
 </body>
