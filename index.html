@@ -149,17 +149,69 @@
 
   <div id="resultado"></div>
 
-  <script>
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      let output = '<h2>Dados Recebidos:</h2><ul>';
-      for (let [chave, valor] of formData.entries()) {
-        output += `<li><strong>${chave}</strong>: ${valor}</li>`;
+<script>
+  document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita recarregamento da página
+    const formData = new FormData(event.target);
+    const dados = {};
+
+    // Agrupa dados com nomes repetidos (como checkboxes)
+    for (let [chave, valor] of formData.entries()) {
+      if (dados[chave]) {
+        if (Array.isArray(dados[chave])) {
+          dados[chave].push(valor);
+        } else {
+          dados[chave] = [dados[chave], valor];
+        }
+      } else {
+        dados[chave] = valor;
       }
-      output += '</ul>';
-      document.getElementById('resultado').innerHTML = output;
-    });
+    }
+
+    // Mapeia nomes para rótulos mais amigáveis (parcial, pode ser expandido)
+    const rotulos = {
+      acolhimento: "Tipo de Acolhimento",
+      encaminhado: "Encaminhado por",
+      motivo: "Motivo de Acolhimento",
+      equipe_cs: "Equipe de Referência do CS",
+      profissionais_caps: "Profissionais de Referência no CAPS",
+      rede_apoio: "Rede de Apoio",
+      situacao_profissional: "Situação Profissional",
+      beneficiario: "Beneficiário",
+      beneficio_qual: "Qual benefício?",
+      historico_vida: "Histórico de Vida",
+      motivacao_tratamento: "Motivação para o Tratamento",
+      alergias: "Alergias",
+      questoes_clinicas: "Questões Clínicas Relatadas",
+      outros_clinicos: "Outros (especificar)",
+      comorbidades_psiquiatricas: "Comorbidades Psiquiátricas",
+      medicacoes: "Medicações em Uso",
+      historico_tratamentos: "Histórico de Tratamentos Psiquiátricos",
+      risco_suicida: "Avaliação de Risco / Comportamento Suicida",
+      spa1_substancia: "SPA 1 - Substância",
+      spa1_situacao: "SPA 1 - Situação",
+      spa1_idade: "SPA 1 - Idade 1º Uso",
+      spa1_frequencia: "SPA 1 - Frequência",
+      spa1_quantidade: "SPA 1 - Quantidade",
+      spa1_ultimo: "SPA 1 - Último Uso",
+      spa1_fissura: "SPA 1 - Fissura",
+      avaliacao_caso: "Outras Impressões do Caso",
+      diagnostico: "Diagnóstico – CIAP 2",
+      plano_inicial: "Plano Inicial",
+      encaminhamentos: "Encaminhamentos Realizados"
+    };
+
+    let output = '<h2>Dados Recebidos:</h2>';
+    output += '<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">';
+    for (let chave in dados) {
+      let label = rotulos[chave] || chave;
+      let valor = Array.isArray(dados[chave]) ? dados[chave].join(', ') : dados[chave];
+      output += `<tr><td><strong>${label}</strong></td><td>${valor}</td></tr>`;
+    }
+    output += '</table>';
+    document.getElementById('resultado').innerHTML = output;
+  });
+
   </script>
 
 </body>
