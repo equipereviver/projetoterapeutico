@@ -1,3 +1,6 @@
+Claro! Aqui está o código HTML completo com todas as alterações solicitadas:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -126,90 +129,120 @@
       <input type="text" name="spa1_fissura" id="spa1_fissura">
     </div>
 
-    <h2>Registrar no campo Avaliação do PEC</h2>
-    <label for="avaliacao_caso">Outras Impressões do Caso:</label>
-    <textarea name="avaliacao_caso" id="avaliacao_caso"></textarea>
+    <h2>Exame Psíquico</h2>
 
-    <label for="diagnostico">Diagnóstico – CIAP 2:</label>
-    <input type="text" name="diagnostico" id="diagnostico">
+    <label for="aparencia">Aparência:</label>
+    <input type="text" name="aparencia" id="aparencia">
 
-    <h2>Plano do PEC</h2>
     <fieldset class="radio-group">
-      <legend><strong>Plano Inicial:</strong></legend>
-      <label><input type="radio" name="plano_inicial" value="inserido"> Inserido</label>
-      <label><input type="radio" name="plano_inicial" value="nao_inserido"> Não Inserido</label>
+      <legend><strong>Consciência:</strong></legend>
+      <label><input type="radio" name="consciencia" value="consciente"> Consciente</label>
+      <label><input type="radio" name="consciencia" value="obnubilado"> Obnubilado</label>
+      <label><input type="radio" name="consciencia" value="torporoso"> Torporoso</label>
+      <label><input type="radio" name="consciencia" value="comatoso"> Comatoso</label>
     </fieldset>
 
-    <label for="encaminhamentos">Encaminhamentos Realizados:</label>
-    <textarea name="encaminhamentos" id="encaminhamentos"></textarea>
+    <fieldset class="radio-group">
+      <legend><strong>Atenção:</strong></legend>
+      <label><input type="radio" name="atencao" value="normovigil"> Normovigil</label>
+      <label><input type="radio" name="atencao" value="hipervigil"> Hipervigil</label>
+      <label><input type="radio" name="atencao" value="hipovigil"> Hipovigil</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Orientação:</strong></legend>
+      <label><input type="radio" name="orientacao_alopsiquicamente" value="sim"> Sim</label>
+      <label><input type="radio" name="orientacao_alopsiquicamente" value="nao"> Não</label>
+      <label><input type="radio" name="orientacao_autopsiquicamente" value="sim"> Sim</label>
+      <label><input type="radio" name="orientacao_autopsiquicamente" value="nao"> Não</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Memória:</strong></legend>
+      <label><input type="radio" name="memoria" value="preservada"> Preservada</label>
+      <label><input type="radio" name="memoria" value="alterada"> Alterada</label>
+    </fieldset>
+
+    <label for="tipo_memoria">Tipo de alteração da memória:</label>
+    <input type="text" name="tipo_memoria" id="tipo_memoria">
+
+    <fieldset class="radio-group">
+      <legend><strong>Linguagem:</strong></legend>
+      <label><input type="radio" name="linguagem" value="normal"> Normal</label>
+      <label><input type="radio" name="linguagem" value="prolixo"> Prolixo</label>
+      <label><input type="radio" name="linguagem" value="laconico"> Lacônico</label>
+      <label><input type="radio" name="linguagem" value="logorreico"> Logorréico</label>
+      <label><input type="radio" name="linguagem" value="mutismo"> Mutismo</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Afetividade:</strong></legend
+
+>
+      <label><input type="radio" name="afetividade" value="associado"> Associado</label>
+      <label><input type="radio" name="afetividade" value="dissociado"> Dissociado</label>
+      <label><input type="radio" name="afetividade" value="embotado"> Embotado</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Humor:</strong></legend>
+      <label><input type="radio" name="humor" value="eutimico"> Eutímico</label>
+      <label><input type="radio" name="humor" value="hipertimico"> Hipertímico</label>
+      <label><input type="radio" name="humor" value="hipotimico"> Hipotímico</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Vontade:</strong></legend>
+      <label><input type="radio" name="vontade" value="volicao_preservada"> Volição preservada</label>
+      <label><input type="radio" name="vontade" value="impulsividade"> Impulsividade</label>
+      <label><input type="radio" name="vontade" value="compulsao"> Compulsão</label>
+      <label><input type="radio" name="vontade" value="volicao_diminuida"> Volição diminuída</label>
+      <label><input type="radio" name="vontade" value="volicao_abolida"> Volição abolida</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Psicomotricidade:</strong></legend>
+      <label><input type="radio" name="psicomotricidade" value="inalterado"> Inalterado</label>
+      <label><input type="radio" name="psicomotricidade" value="esturpor"> Esturpor</label>
+      <label><input type="radio" name="psicomotricidade" value="agitacao_psicomotora"> Agitação psicomotora</label>
+      <label><input type="radio" name="psicomotricidade" value="lentificacao_psicomotora"> Lentificação psicomotora</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Pensamento:</strong></legend>
+      <label><input type="radio" name="pensamento" value="organizado"> Organizado</label>
+      <label><input type="radio" name="pensamento" value="desorganizado"> Desorganizado</label>
+      <label><input type="radio" name="pensamento" value="inalterado"> Inalterado</label>
+      <label><input type="radio" name="pensamento" value="acelerado"> Acelerado</label>
+      <label><input type="radio" name="pensamento" value="lentificado"> Lentificado</label>
+      <label><input type="radio" name="pensamento" value="normal"> Normal</label>
+      <label><input type="radio" name="pensamento" value="delirante"> Delirante</label>
+      <label><input type="radio" name="pensamento" value="persecutoriedade"> Persecutoriedade</label>
+    </fieldset>
+
+    <fieldset class="radio-group">
+      <legend><strong>Ideação Suicida:</strong></legend>
+      <label><input type="radio" name="ideacao_suicida" value="sim"> SIM</label>
+      <label><input type="radio" name="ideacao_suicida" value="nao"> NÃO</label>
+    </fieldset>
+
+    <label for="tipo_delirio">Tipo de delírio ou persecutoriedade:</label>
+    <input type="text" name="tipo_delirio" id="tipo_delirio">
+
+    <fieldset class="radio-group">
+      <legend><strong>Senso Percepção:</strong></legend>
+      <label><input type="radio" name="senso_percepcao" value="sem_alteracoes"> Sem alterações</label>
+      <label><input type="radio" name="senso_percepcao" value="ilusao"> Ilusão</label>
+      <label><input type="radio" name="senso_percepcao" value="despersonalizacao"> Despersonalização</label>
+    </fieldset>
+
+    <label for="alucinacoes_tipo">Alucinações/Tipo:</label>
+    <input type="text" name="alucinacoes_tipo" id="alucinacoes_tipo">
 
     <br><br>
-    <button type="submit">Enviar</button>
+
+    <button type="submit">Registrar</button>
   </form>
-
-  <div id="resultado"></div>
-
-<script>
-  document.getElementById('formulario').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const dados = {};
-
-    for (let [chave, valor] of formData.entries()) {
-      if (dados[chave]) {
-        if (Array.isArray(dados[chave])) {
-          dados[chave].push(valor);
-        } else {
-          dados[chave] = [dados[chave], valor];
-        }
-      } else {
-        dados[chave] = valor;
-      }
-    }
-
-    const rotulos = {
-      acolhimento: "Tipo de Acolhimento",
-      encaminhado: "Encaminhado por",
-      motivo: "Motivo de Acolhimento",
-      equipe_cs: "Equipe de Referência do CS",
-      profissionais_caps: "Profissionais de Referência no CAPS",
-      rede_apoio: "Rede de Apoio",
-      situacao_profissional: "Situação Profissional",
-      beneficiario: "Beneficiário",
-      beneficio_qual: "Qual benefício?",
-      historico_vida: "Histórico de Vida",
-      motivacao_tratamento: "Motivação para o Tratamento",
-      alergias: "Alergias",
-      questoes_clinicas: "Questões Clínicas Relatadas",
-      outros_clinicos: "Outros (especificar)",
-      comorbidades_psiquiatricas: "Comorbidades Psiquiátricas",
-      medicacoes: "Medicações em Uso",
-      historico_tratamentos: "Histórico de Tratamentos Psiquiátricos",
-      risco_suicida: "Avaliação de Risco / Comportamento Suicida",
-      spa1_substancia: "SPA 1 - Substância",
-      spa1_situacao: "SPA 1 - Situação",
-      spa1_idade: "SPA 1 - Idade 1º Uso",
-      spa1_frequencia: "SPA 1 - Frequência",
-      spa1_quantidade: "SPA 1 - Quantidade",
-      spa1_ultimo: "SPA 1 - Último Uso",
-      spa1_fissura: "SPA 1 - Fissura",
-      avaliacao_caso: "Outras Impressões do Caso",
-      diagnostico: "Diagnóstico – CIAP 2",
-      plano_inicial: "Plano Inicial",
-      encaminhamentos: "Encaminhamentos Realizados"
-    };
-
-    let output = '<h2>Formulário de acolhimento Caps Ad Reviver:</h2>';
-    output += '<div style="font-size: 0.9em; line-height: 1.5;">';
-    for (let chave in dados) {
-      let label = rotulos[chave] || chave;
-      let valor = Array.isArray(dados[chave]) ? dados[chave].join(', ') : dados[chave];
-      output += `<p><strong>${label}:</strong> ${valor}</p>`;
-    }
-    output += '</div>';
-    document.getElementById('resultado').innerHTML = output;
-  });
-</script>
 
 </body>
 </html>
